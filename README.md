@@ -20,7 +20,7 @@ docker volume create buildvol
 Start a yocto build (inside the running Docker container or on a host which has all required build host packages installed:
 https://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#packages):
 ```
-repo init -u https://github.com/rialgo/buildsystem.git
+repo init -u https://github.com/yorns/simpleMovieBuild.git
 repo sync
 . setup-environment
 bitbake rpi-image

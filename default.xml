@@ -6,7 +6,7 @@
   <remote fetch="git://git.yoctoproject.org" name="yocto"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
   <remote fetch="https://github.com/agherzan" name="raspberrypi"/>
-  <remote fetch="https://github.com/rialgo" name="buildsystem"/>
+  <remote fetch="https://github.com/yorns" name="yorns"/>
 
   <!-- yocto revision="rocko" -->
   <project remote="yocto" name="poky.git" revision="21ba45aa77e4d43a93cd96d859707a4758e8b64b" path="sources/poky"/>
@@ -16,8 +16,13 @@
   
   <!-- raspberrypi revision="rocko" -->
   <project remote="raspberrypi" name="meta-raspberrypi.git" revision="510009f0c825cd7992d2d37e9ed0007f6c3be723" path="sources/meta-raspberrypi"/>
+  
+  <!-- yorns repositories for the GUI and communication unit -->
+  <project remote="yorns" revision="master" name="simpleMovieUi.git" path="sources/simpleMovieUi">
+  <project remote="yorns" revision="master" name="snc.git" path="sources/snc">
 
-  <project remote="buildsystem" revision="master" name="buildsystem.git" path="sources/buildsystem">
+
+  <project remote="yorns" revision="master" name="simpleMovieBuild.git" path="sources/simpleMovieBuild">
     <copyfile src="scripts/setup-environment" dest="setup-environment"/>
   </project>
 
