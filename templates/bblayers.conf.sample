@@ -18,6 +18,6 @@ BBLAYERS = " \
   \
   ${BSPDIR}/sources/meta-raspberrypi \
   \
-  ${BSPDIR}/sources/buildsystem/meta-app \
-  ${BSPDIR}/sources/buildsystem/meta-rpic \
+  ${BSPDIR}/sources/simpleMovieBuild/meta-app \
+  ${BSPDIR}/sources/simpleMovieBuild/meta-rpic \
 "
