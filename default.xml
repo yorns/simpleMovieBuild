@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default sync-j="2"/>
+
+  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+  <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/agherzan" name="raspberrypi"/>
+  <remote fetch="https://github.com/rialgo" name="buildsystem"/>
+
+  <!-- yocto revision="rocko" -->
+  <project remote="yocto" name="poky.git" revision="21ba45aa77e4d43a93cd96d859707a4758e8b64b" path="sources/poky"/>
+  
+  <!-- oe revision="rocko" -->
+  <project remote="oe" name="meta-openembedded.git" revision="a65c1acb1822966c3553de9fc98d8bb6be705c4e" path="sources/meta-openembedded"/>
+  
+  <!-- raspberrypi revision="rocko" -->
+  <project remote="raspberrypi" name="meta-raspberrypi.git" revision="510009f0c825cd7992d2d37e9ed0007f6c3be723" path="sources/meta-raspberrypi"/>
+
+  <project remote="buildsystem" revision="master" name="buildsystem.git" path="sources/buildsystem">
+    <copyfile src="scripts/setup-environment" dest="setup-environment"/>
+  </project>
+
+</manifest>
