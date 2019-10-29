@@ -12,6 +12,7 @@ IMAGE_INSTALL_append = " \
   wpa-supplicant \
   linux-firmware-bcm43430 \
   snc \
+  simplemovieui \
   bash \
   "
 
