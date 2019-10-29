@@ -242,8 +242,3 @@ CONF_VERSION = "1"
 
 
 # Additional packages (added here for the sake of simplicity)
-IMAGE_INSTALL_append = " \
-  snc \
-  motor-control \
-  control-sender \
-  "
