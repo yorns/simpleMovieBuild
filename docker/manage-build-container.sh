@@ -1,11 +1,11 @@
 #!/bin/bash
 
 docker_image_name="yocto-bs"
-docker_image_tag="ubuntu-16.04"
+docker_image_tag="ubuntu-18.04"
 
 # Create volume with:
 # docker volume create buildvol
-build_volume="buildvol"
+build_volume="buildvol2"
 
 build_docker_image() {
   docker build . -t ${docker_image_name}:${docker_image_tag}

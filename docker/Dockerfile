@@ -1,6 +1,6 @@
 # Dockerfile based on https://github.com/crops/yocto-dockerfiles/blob/master/dockerfiles/ubuntu/ubuntu-16.04/ubuntu-16.04-base/Dockerfile
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ARG BUILD_USER=build
 
@@ -27,6 +27,7 @@ RUN apt-get update && \
         sudo \
         iputils-ping \
         curl \
+        vim \
         nano \
         fluxbox \
         tightvncserver && \
