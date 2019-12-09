@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-username="build"
+username="yocto"
+
+echo "userid: ${USERID}"
 
 # If a USERID is specified change the uid
 # of user "$username" to USERID and su to that user

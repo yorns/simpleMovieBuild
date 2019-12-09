@@ -1,54 +1,31 @@
-# Dockerfile based on https://github.com/crops/yocto-dockerfiles/blob/master/dockerfiles/ubuntu/ubuntu-16.04/ubuntu-16.04-base/Dockerfile
-
 FROM ubuntu:18.04
 
-ARG BUILD_USER=build
+RUN apt-get update && apt-get -y install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
+     xz-utils debianutils iputils-ping libsdl1.2-dev xterm tar locales curl vim && \
+     apt-get clean && \
+     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && \
-    apt-get install -y \
-        gawk \
-        wget \
-        git-core \
-        diffstat \
-        unzip \
-        sysstat \
-        texinfo \
-        gcc-multilib \
-        build-essential \
-        chrpath \
-        socat \
-        python \
-        python3 \
-        xz-utils  \
-        locales \
-        cpio \
-        screen \
-        tmux \
-        sudo \
-        iputils-ping \
-        curl \
-        vim \
-        nano \
-        fluxbox \
-        tightvncserver && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    cp -af /etc/skel/ /etc/vncskel/ && \
-    echo "export DISPLAY=1" >>/etc/vncskel/.bashrc && \
-    mkdir  /etc/vncskel/.vnc && \
-    echo "" | vncpasswd -f > /etc/vncskel/.vnc/passwd && \
-    chmod 0600 /etc/vncskel/.vnc/passwd && \
-    curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && \
-    chmod a+x /usr/bin/repo && \
-    useradd -U -m $BUILD_USER && \
-    /usr/sbin/locale-gen en_US.UTF-8
+RUN rm /bin/sh && ln -s bash /bin/sh
 
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && \
+    chmod a+x /usr/bin/repo
+
+RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-WORKDIR /home/$BUILD_USER
-#USER $BUILD_USER
+ENV USER_NAME yocto
+ENV PROJECT yocto 
+
+ARG host_uid=1001
+ARG host_gid=1001
+RUN groupadd -g $host_gid $USER_NAME && useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER_NAME
+
+#USER $USER_NAME
+
+WORKDIR /home/$USER_NAME 
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
+

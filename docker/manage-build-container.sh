@@ -25,7 +25,7 @@ run_docker_container() {
     -e LANGUAGE=en_US:en \
     -e LC_ALL=en_US.UTF-8 \
     --workdir /workdir \
-    --name yocto-build \
+    --name yocto-build-movie \
     ${docker_image_name}:${docker_image_tag} \
     /bin/bash
 }
