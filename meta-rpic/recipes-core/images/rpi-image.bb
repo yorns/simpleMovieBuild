@@ -14,6 +14,7 @@ IMAGE_INSTALL_append = " \
   snc \
   simplemovieui \
   bash \
+  nfs-util-client \
   "
 
 export IMAGE_BASENAME = "rpi-image"
