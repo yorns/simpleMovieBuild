@@ -13,8 +13,9 @@ IMAGE_INSTALL_append = " \
   linux-firmware-bcm43430 \
   snc \
   simplemovieui \
+  libcec \
   bash \
-  nfs-util-client \
+  nfs-utils \
   "
 
 export IMAGE_BASENAME = "rpi-image"
