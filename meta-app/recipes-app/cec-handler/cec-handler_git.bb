@@ -1,6 +1,6 @@
 DESCRIPTION = "Remote Control Handler"
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=254d223b9e70204fcb33cd46be4df2d7"
+LICENSE = "CLOSED"
+#LIC_FILES_CHKSUM = "file://LICENSE;md5=254d223b9e70204fcb33cd46be4df2d7"
 
 S = "${WORKDIR}/git"
 
