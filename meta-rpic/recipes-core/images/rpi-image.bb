@@ -13,7 +13,7 @@ IMAGE_INSTALL_append = " \
   linux-firmware-bcm43430 \
   snc \
   simplemovieui \
-  libcec \
+  cec-handler \
   bash \
   nfs-utils \
   "
