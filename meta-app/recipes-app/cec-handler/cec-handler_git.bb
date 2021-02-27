@@ -16,5 +16,11 @@ inherit systemd
 
 SYSTEMD_SERVICE_${PN} = "cec-handler.service"
 
+do_install_append() {
+  install -d ${D}${systemd_unitdir}/system
+  install -m 0644 ${S}/systemd/cec-hander.service ${D}${systemd_unitdir}/system
+}
+
+
 SYSTEMD_AUTO_ENABLE_${PN} = "enable"
 
