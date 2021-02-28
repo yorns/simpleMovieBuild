@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 
 S = "${WORKDIR}"
 
-DEPENDS = "libcec snc " 
+RDEPENDS = "libcec snc " 
 
 inherit systemd
 
