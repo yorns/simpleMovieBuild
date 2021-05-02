@@ -29,7 +29,7 @@ do_install_append() {
   install -d ${D}${systemd_unitdir}/system/systemd-udevd.service.d
   install -m 0644 ${S}/scripts/udev/myoverride.conf ${D}${systemd_unitdir}/system/systemd-udevd.service.d
   install -d ${D}${systemd_unitdir}/system
-  install -m 0644 ${S}/systemd/remote_handler.service ${D}${systemd_unitdir}/system
+#  install -m 0644 ${S}/systemd/remote_handler.service ${D}${systemd_unitdir}/system
   install -d ${D}${systemd_unitdir}/system/getty@tty1.service.d
   install -m 0644 ${S}/scripts/tty/myoverride.conf ${D}${systemd_unitdir}/system/getty@tty1.service.d
   install -d ${D}/usr/share/consolefonts
