@@ -19,10 +19,5 @@ do_install_append() {
   install -m 0644 ${WORKDIR}/cec_handler.service ${D}${systemd_unitdir}/system
 }
 
-FILES_${PN} = "\
-${bindir}/cec-client \
-${libdir}/libcec.so \
-"
-
 SYSTEMD_AUTO_ENABLE_${PN} = "enable"
 
