@@ -7,8 +7,8 @@ SRC_URI = "file://cec_handler.service"
 
 S = "${WORKDIR}"
 
-RDEPENDS_${PN} = "libcec " 
-DEPENDS = "snc libcec "
+RDEPENDS_${PN} = " snc libcec " 
+#DEPENDS = ""
 
 inherit systemd
 
@@ -18,6 +18,11 @@ do_install_append() {
   install -d ${D}${systemd_unitdir}/system
   install -m 0644 ${WORKDIR}/cec_handler.service ${D}${systemd_unitdir}/system
 }
+
+FILES_${PN} = "\
+${bindir}/cec-client \
+${libdir}/libcec.so \
+"
 
 SYSTEMD_AUTO_ENABLE_${PN} = "enable"
 

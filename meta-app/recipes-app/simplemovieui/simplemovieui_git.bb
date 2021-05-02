@@ -18,8 +18,8 @@ S = "${WORKDIR}/git"
 
 # NOTE: the following library dependencies are unknown, ignoring: snc_client
 #       (this is based on recipes that have previously been built and packaged)
-DEPENDS = " snc libcec ncurses omxplayer boost bash udev-extraconf"
-RDEPENDS_${PN} += "bash"
+DEPENDS = " snc libcec ncurses omxplayer boost bash"
+RDEPENDS_${PN} += "bash udev-extraconf"
 inherit cmake
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
