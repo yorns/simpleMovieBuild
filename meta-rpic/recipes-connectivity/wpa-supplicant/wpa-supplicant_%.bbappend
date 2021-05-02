@@ -2,7 +2,7 @@
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://wpa_supplicant.conf"
+SRC_URI += "file://wpa_supplicant.conf file://wpa_supplicant.service"
 
 do_install_append() {
 	install -d ${D}/${systemd_unitdir}/system
