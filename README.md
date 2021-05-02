@@ -1,4 +1,4 @@
-# Zeroplayer
+# Simple Movie Player
 
 This yocto-based buildsystem uses a Docker container for the build of a Raspberry Pi zero-w image.
 The Dockerfile is located in folder `docker` and based on `crop porky ubuntu-18.04` (https://github.com/crops/poky-container).
