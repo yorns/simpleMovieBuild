@@ -15,7 +15,7 @@ https://github.com/yorns/zeroPlayerBuild/wiki/Get-started-and-work-with-the-zero
 Checkout the right branch (start should be master branch).
 
 ```
-git clone https://github.com/yorns/zeroPlayerBuild.git
+git clone https://github.com/yorns/simpleMovieBuild.git
 cd zeroPlayerBuild
 ```
 
